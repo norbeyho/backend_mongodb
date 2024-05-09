@@ -45,7 +45,7 @@ router.put('/users/:id',cors(),(req, res)=>{
     const { id } = req.params;
     const {username, fullname, email, password, role} = req.body;
     userSchema
-         .updateOne({_id:id},{$set: {username, age, email, password, role}})
+         .updateOne({_id:id},{$set: {username, fullname, email, password, role}})
          .then((data) => res.json(data))
          .catch((error) =>res.json({message: error}))
  })
